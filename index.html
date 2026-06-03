@@ -28,11 +28,7 @@ body,html{
   transition:background var(--t),color var(--t);
 }
 svg{display:block;flex-shrink:0}
-
-/* HEADER */
 .header{background:var(--s1);flex-shrink:0;border-bottom:1px solid var(--border);box-shadow:0 4px 32px rgba(0,0,0,.4);position:relative;z-index:20}
-
-/* TABS */
 .tabs-bar{display:flex;align-items:flex-end;padding:5px 10px 0;gap:2px;height:calc(var(--tab-h)+5px);overflow-x:auto;overflow-y:visible;scrollbar-width:none}
 .tabs-bar::-webkit-scrollbar{display:none}
 .tab{display:flex;align-items:center;height:var(--tab-h);min-width:52px;max-width:200px;padding:0 12px;gap:7px;flex-shrink:0;border-radius:8px 8px 0 0;cursor:pointer;background:transparent;border:1px solid transparent;border-bottom:none;transform:translateY(2px);transition:background var(--t),border-color var(--t),transform var(--t),box-shadow var(--t);animation:tabIn .2s cubic-bezier(.4,0,.2,1) both}
@@ -49,14 +45,10 @@ svg{display:block;flex-shrink:0}
 .tab-x:hover{background:rgba(248,113,113,.15);color:var(--red);transform:scale(1.15)}
 .new-tab-btn{width:28px;height:28px;border:none;background:none;cursor:pointer;border-radius:7px;color:var(--dim);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-bottom:2px;transition:background .15s,color .15s,transform .3s}
 .new-tab-btn:hover{background:var(--s3);color:var(--text);transform:rotate(90deg) scale(1.1)}
-
-/* BOOKMARKS BAR */
 .bmarks-bar{display:flex;align-items:center;padding:0 14px;height:30px;gap:4px;border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;transition:height .25s,opacity .25s}
 .bmarks-bar.hidden{height:0;opacity:0;overflow:hidden;border:none;padding:0}
 .bm-item{display:flex;align-items:center;gap:5px;padding:3px 10px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:500;color:var(--dim2);white-space:nowrap;flex-shrink:0;transition:background .15s,color .15s;border:none;background:none}
 .bm-item:hover{background:var(--s3);color:var(--text)}
-
-/* TOOLBAR */
 .toolbar{display:flex;align-items:center;padding:7px 12px;gap:7px;height:var(--bar-h)}
 .nav-btn{width:32px;height:32px;border:none;background:none;cursor:pointer;border-radius:8px;color:var(--dim);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background var(--t),color var(--t),transform .1s}
 .nav-btn:hover:not(:disabled){background:var(--s3);color:var(--text)}
@@ -74,16 +66,12 @@ svg{display:block;flex-shrink:0}
 .tbx-btn{width:32px;height:32px;border:none;background:none;cursor:pointer;border-radius:8px;color:var(--dim);display:flex;align-items:center;justify-content:center;transition:background var(--t),color var(--t),transform .1s}
 .tbx-btn:hover{background:var(--s3);color:var(--text)}
 .tbx-btn.lit{color:var(--acc)}
-
-/* VIEWPORT */
 .viewport{flex:1;position:relative;overflow:hidden;background:#fff}
 .viewport iframe{width:100%;height:100%;border:none;display:block;animation:vpIn .28s cubic-bezier(.4,0,.2,1) both}
 @keyframes vpIn{from{opacity:0;transform:scale(.975) translateY(6px)}to{opacity:1;transform:none}}
 .lbar{position:absolute;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--acc),var(--acc2),var(--acc));background-size:300% 100%;border-radius:0 2px 2px 0;opacity:0;z-index:100;box-shadow:0 0 12px var(--acc);transition:width .3s ease,opacity .3s;animation:lbShim 1.8s linear infinite paused}
 .lbar.go{opacity:1;animation-play-state:running}
 @keyframes lbShim{0%{background-position:0%}100%{background-position:300%}}
-
-/* NEW TAB PAGE */
 .nt-page{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg);gap:0;overflow:hidden;position:relative}
 .nt-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 30% 40%,rgba(108,142,255,.07) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 70% 60%,rgba(167,139,250,.06) 0%,transparent 70%)}
 .nt-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:48px 48px;opacity:.4}
@@ -104,8 +92,6 @@ svg{display:block;flex-shrink:0}
 .nt-rc:hover .nt-rc-ico{color:var(--acc);transform:scale(1.15)}
 .nt-rc-lbl{font-size:11px;color:var(--dim);font-weight:500;letter-spacing:.3px;transition:color var(--t)}
 .nt-rc:hover .nt-rc-lbl{color:var(--text)}
-
-/* PANEL */
 .panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:50;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(4px)}
 .panel-overlay.open{opacity:1;pointer-events:all}
 .panel{position:fixed;top:0;right:0;bottom:0;width:360px;background:var(--s1);border-left:1px solid var(--border2);box-shadow:-20px 0 60px rgba(0,0,0,.5);transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);z-index:51;display:flex;flex-direction:column;overflow:hidden}
@@ -115,8 +101,6 @@ svg{display:block;flex-shrink:0}
 .panel-close{width:30px;height:30px;border:none;background:none;cursor:pointer;color:var(--dim);border-radius:7px;display:flex;align-items:center;justify-content:center;transition:background .15s,color .15s}
 .panel-close:hover{background:var(--s3);color:var(--text)}
 .panel-body{flex:1;overflow-y:auto;padding:12px;scrollbar-width:thin;scrollbar-color:var(--s4) transparent}
-
-/* LIST ITEMS */
 .list-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;cursor:pointer;transition:background .15s;animation:fadeUp .2s ease both}
 .list-item:hover{background:var(--s3)}
 .list-item-ico{color:var(--dim2);flex-shrink:0;width:20px;display:flex;align-items:center;justify-content:center}
@@ -128,8 +112,6 @@ svg{display:block;flex-shrink:0}
 .list-item-del:hover{background:rgba(248,113,113,.15);color:var(--red)}
 .empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;height:200px;gap:10px;color:var(--dim);font-size:13px}
 .empty-state .e-ico{color:var(--dim);opacity:.3}
-
-/* SETTINGS */
 .settings-label{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);padding:14px 12px 6px}
 .setting-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-radius:8px;gap:12px;transition:background .15s}
 .setting-row:hover{background:var(--s2)}
@@ -143,8 +125,6 @@ svg{display:block;flex-shrink:0}
 .color-swatches{display:flex;gap:6px}
 .swatch{width:22px;height:22px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:transform .15s,border-color .15s}
 .swatch:hover,.swatch.active{transform:scale(1.2);border-color:var(--text)}
-
-/* ERROR */
 .err-page{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg);gap:14px;color:var(--text);animation:vpIn .28s ease both}
 .err-num{font-size:120px;opacity:.05;font-weight:700;letter-spacing:-8px;line-height:1;user-select:none}
 .err-page h2{font-size:18px;font-weight:600}
@@ -152,8 +132,6 @@ svg{display:block;flex-shrink:0}
 .err-page code{background:var(--s2);padding:3px 9px;border-radius:5px;font-family:var(--mono);font-size:12px;color:var(--acc2);border:1px solid var(--border2)}
 .err-retry{margin-top:8px;padding:10px 24px;border:none;cursor:pointer;background:var(--acc);color:#fff;border-radius:8px;font-family:var(--font);font-size:13px;font-weight:500;transition:opacity .15s,transform .12s}
 .err-retry:hover{opacity:.85;transform:translateY(-1px)}
-
-/* CONTEXT MENU */
 .ctx-menu{position:fixed;background:var(--s2);border:1px solid var(--border2);border-radius:10px;padding:4px;min-width:180px;box-shadow:0 16px 48px rgba(0,0,0,.5);z-index:200;transform-origin:top left;animation:ctxIn .15s cubic-bezier(.4,0,.2,1) both}
 @keyframes ctxIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
 .ctx-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:7px;cursor:pointer;font-size:13px;font-weight:400;color:var(--text);transition:background .12s;border:none;background:none;width:100%;text-align:left;font-family:var(--font)}
@@ -162,8 +140,6 @@ svg{display:block;flex-shrink:0}
 .ctx-sep{height:1px;background:var(--border);margin:3px 8px}
 .ctx-ico{width:16px;display:flex;align-items:center;justify-content:center;color:var(--dim2)}
 .ctx-item:hover .ctx-ico{color:inherit}
-
-/* SEARCH PAGE */
 .search-page{width:100%;height:100%;display:flex;flex-direction:column;background:var(--bg);overflow-y:auto}
 .sp-head{padding:20px 48px;display:flex;align-items:center;gap:20px;border-bottom:1px solid var(--border);flex-shrink:0}
 .sp-brand{font-size:20px;font-weight:700;letter-spacing:-1px;color:var(--text)}
@@ -179,13 +155,13 @@ svg{display:block;flex-shrink:0}
 .sp-result-desc{font-size:13px;color:var(--dim2);line-height:1.6}
 .sp-meta{font-size:12px;color:var(--dim);padding:0 48px 12px;margin-top:-8px}
 .sp-empty{padding:48px;color:var(--dim);font-size:14px;text-align:center}
-
-/* TOAST */
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--s2);border:1px solid var(--border2);color:var(--text);font-size:13px;font-weight:500;padding:10px 20px;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,.4);z-index:300;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;white-space:nowrap}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 ::-webkit-scrollbar{width:5px;height:5px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--s4);border-radius:3px}
+.tab-spinner{width:12px;height:12px;border:2px solid var(--dim2);border-top-color:var(--acc);border-radius:50%;animation:spin .6s linear infinite;margin-right:4px}
+@keyframes spin{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
@@ -211,7 +187,7 @@ svg{display:block;flex-shrink:0}
       <span class="omnibox-secure">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="color:var(--acc3);opacity:.7"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
       </span>
-      <input class="omnibox-input" id="omnibox" type="text" autocomplete="off" spellcheck="false" placeholder="Enter domain or search...">
+      <input class="omnibox-input" id="omnibox" type="text" autocomplete="off" spellcheck="false" placeholder="site://domain or search...">
       <button class="omnibox-go" id="omnibox-go">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </button>
@@ -262,7 +238,6 @@ const IC = {
 };
 
 function toFile(h){ return h.replace(/\./g,'(dot)')+'.html'; }
-function normHost(r){ return r.replace(/^(https?:\/\/)?(www\.)?/,'').replace(/\/$/,'').toLowerCase(); }
 function uid(){ return Math.random().toString(36).slice(2,9); }
 function fmtTime(d){ return d.toLocaleTimeString('en',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}); }
 function fmtDate(d){ return d.toLocaleDateString('en',{weekday:'long',day:'numeric',month:'long',year:'numeric'}); }
@@ -282,6 +257,8 @@ function applyTheme(){
 applyTheme();
 
 let tabs={}, activeId=null;
+let tabOrder=[];
+let ctrlTabIndex=0;
 
 const tabsBar  = document.getElementById('tabs-bar');
 const newTabBtn= document.getElementById('new-tab-btn');
@@ -305,46 +282,208 @@ function startLoad(){ lbar.style.width='0%'; lbar.classList.add('go'); requestAn
 function endLoad(){ lbar.style.width='100%'; setTimeout(()=>{ lbar.classList.remove('go'); lbar.style.width='0%'; },400); }
 function clearVP(){ Array.from(vp.children).forEach(el=>{ if(el!==lbar) el.remove(); }); }
 
-/* ── SEARCH PAGE ── */
-const FAKE_INDEX = {
-  'browser':['domens/about','history','settings','nyx search'],
-  'nyx':['nyx browser info','nyx search engine','nyx settings'],
-};
+function setTabSpinner(id, show){
+  const el=tabsBar.querySelector(`[data-id="${id}"]`);
+  if(!el) return;
+  const icoSpan=el.querySelector('.tab-ico');
+  if(show){
+    if(!icoSpan.querySelector('.tab-spinner')){
+      icoSpan.style.display='none';
+      const spinner=document.createElement('div');
+      spinner.className='tab-spinner';
+      spinner.style.display='inline-block';
+      el.insertBefore(spinner, icoSpan.nextSibling);
+    }
+  } else {
+    const spinner=el.querySelector('.tab-spinner');
+    if(spinner) spinner.remove();
+    icoSpan.style.display='flex';
+  }
+}
+
+function saveScrollPosition(id){
+  const t=tabs[id];
+  if(t && t._el && t._el.contentWindow){
+    try{
+      t.scrollPos = t._el.contentWindow.scrollY;
+    }catch(e){}
+  }
+}
+
+function restoreScrollPosition(id){
+  const t=tabs[id];
+  if(t && t.scrollPos && t._el && t._el.contentWindow){
+    try{
+      t._el.contentWindow.scrollTo(0, t.scrollPos);
+    }catch(e){}
+  }
+}
+
+async function checkInternet(){
+  try{
+    const ctrl=new AbortController();
+    const tid=setTimeout(()=>ctrl.abort(),3000);
+    await fetch('https://cdn.jsdelivr.net/npm/@faker-js/faker@8.0.0/package.json',{method:'HEAD',signal:ctrl.signal});
+    clearTimeout(tid);
+    return true;
+  }catch{ return false; }
+}
+
+function buildNoInternetPage(id,address){
+  clearVP();
+  const d=document.createElement('div'); d.className='err-page';
+  d.innerHTML=`
+    <div class="err-num">⚠️</div>
+    <h2>No Internet Connection</h2>
+    <p>Cannot load <code>${address}</code><br>Please check your network connection and try again.</p>
+    <button class="err-retry">Retry</button>
+  `;
+  d.querySelector('.err-retry').addEventListener('click',()=>loadSite(id,address));
+  vp.appendChild(d);
+  updateNavBtns(id);
+}
+
+function buildErrorPage(id,address){
+  clearVP();
+  const d=document.createElement('div'); d.className='err-page';
+  d.innerHTML=`
+    <div class="err-num">404</div>
+    <h2>Site not found</h2>
+    <p>Could not load <code>${address}</code></p>
+    <button class="err-retry">Try again</button>
+  `;
+  d.querySelector('.err-retry').addEventListener('click',()=>loadSite(id,address));
+  vp.appendChild(d);
+  updateNavBtns(id);
+}
+
+async function loadSite(id,address){
+  if(!address||address.startsWith('nyx://')) return;
+  if(tabs[id]?._iv){ clearInterval(tabs[id]._iv); tabs[id]._iv=null; }
+  
+  let cleanPath=address;
+  if(cleanPath.startsWith('site://')) cleanPath=cleanPath.slice(7);
+  
+  const firstSlash=cleanPath.indexOf('/');
+  let domain, subPath;
+  if(firstSlash===-1){ domain=cleanPath; subPath=''; }
+  else{ domain=cleanPath.slice(0,firstSlash); subPath=cleanPath.slice(firstSlash+1); }
+  
+  if(subPath.includes('..')||domain.includes('..')){
+    buildErrorPage(id,address);
+    return;
+  }
+  
+  const hasNet=await checkInternet();
+  if(!hasNet){ buildNoInternetPage(id,address); return; }
+  
+  clearVP(); startLoad();
+  setTabSpinner(id,true);
+  
+  let filePath;
+  if(!subPath||subPath==='') filePath=`${DPATH}${domain}/index.html`;
+  else filePath=`${DPATH}${domain}/${subPath}.html`;
+  
+  let html=null;
+  try{
+    const res=await fetch(filePath);
+    if(!res.ok){
+      if(subPath && !subPath.includes('/')){
+        const altPath=`${DPATH}${domain}/${subPath}/index.html`;
+        const altRes=await fetch(altPath);
+        if(!altRes.ok) throw new Error('Not found');
+        html=await altRes.text();
+      } else throw new Error('Not found');
+    } else html=await res.text();
+  } catch{
+    setTabSpinner(id,false);
+    endLoad();
+    buildErrorPage(id,address);
+    return;
+  }
+  
+  const f=document.createElement('iframe');
+  f.setAttribute('sandbox','allow-scripts allow-same-origin allow-popups allow-forms allow-modals');
+  f.srcdoc=html;
+  
+  f.addEventListener('load',()=>{
+    setTabSpinner(id,false);
+    endLoad();
+    restoreScrollPosition(id);
+    try{
+      const iframeDoc=f.contentDocument||f.contentWindow?.document;
+      if(iframeDoc){
+        iframeDoc.querySelectorAll('a').forEach(link=>{
+          link.addEventListener('click',(e)=>{
+            const href=link.getAttribute('href');
+            if(href && !href.startsWith('#') && !href.startsWith('javascript:')){
+              e.preventDefault();
+              let newPath=href;
+              if(!href.startsWith('site://') && !href.startsWith('nyx://')){
+                if(href.startsWith('/')) newPath=`site://${domain}${href}`;
+                else if(!href.includes('://')){
+                  const basePath=subPath ? subPath.substring(0,subPath.lastIndexOf('/')) : '';
+                  const relativePath=basePath ? `${basePath}/${href}` : href;
+                  newPath=`site://${domain}/${relativePath}`;
+                } else newPath=href;
+              }
+              navigateTo(newPath);
+            }
+          });
+        });
+      }
+    } catch(err){}
+  });
+  
+  tabs[id]._el=f;
+  clearVP();
+  vp.appendChild(f);
+  
+  let displayAddress=address;
+  if(!displayAddress.startsWith('site://') && !displayAddress.startsWith('nyx://')){
+    if(displayAddress.includes('.') && !displayAddress.includes(' ')){
+      displayAddress='site://'+displayAddress;
+    }
+  }
+  omnibox.value=displayAddress;
+  
+  if(!tabs[id].incognito){
+    HISTORY.unshift({host:displayAddress,time:Date.now()});
+    HISTORY=HISTORY.filter((v,i,a)=>a.findIndex(x=>x.host===v.host)===i);
+    saveHist();
+  }
+  updateNavBtns(id);
+  renderRecents();
+}
 
 function buildSearchPage(id, query){
   clearVP();
   omnibox.value = 'nyx://search?q='+encodeURIComponent(query);
-
   const q = query.toLowerCase().trim();
   const w = document.createElement('div');
   w.className = 'search-page';
-
-  const localDomens = HISTORY.map(h=>h.host);
   const allResults = [];
-
-  localDomens.forEach(host=>{
-    if(host.includes(q)||q.includes(host.replace(/\.[^.]+$/,''))){
-      allResults.push({ url: host, title: host, desc: 'Local domain in your domens/ folder' });
+  HISTORY.forEach(h=>{
+    const hostClean=h.host.replace('site://','');
+    if(hostClean.includes(q)||q.includes(hostClean.replace(/\.[^.]+$/,''))){
+      allResults.push({ url: h.host, title: hostClean, desc: 'Local site in domens/ folder' });
     }
   });
-
   const infoBase = [
-    {kw:['nyx','browser'],url:'nyx://about',title:'About Nyx Browser',desc:'Nyx is a private, local HTML browser emulator. Load sites from the domens/ folder.'},
-    {kw:['history'],url:'nyx://history',title:'Browsing History',desc:'Your visit history is stored locally. Open the History panel to browse it.'},
-    {kw:['bookmark','bookmarks'],url:'nyx://bookmarks',title:'Bookmarks',desc:'Save and manage your bookmarked domains from the Bookmarks panel.'},
-    {kw:['settings','theme','color'],url:'nyx://settings',title:'Browser Settings',desc:'Customize theme, accent color, and bookmarks bar from the Settings panel.'},
-    {kw:['search','engine'],url:'nyx://search',title:'Nyx Search',desc:'Nyx Search is the built-in private search engine. Your searches never leave this device.'},
-    {kw:['domen','domain','local','html'],url:'nyx://help',title:'Adding Local Domains',desc:'Place HTML files in the domens/ folder. Name them like: q(dot)com.html'},
-    {kw:['tab','tabs'],url:'nyx://help#tabs',title:'Tab Management',desc:'Use Ctrl+T to open a new tab, Ctrl+W to close, right-click a tab for more options.'},
-    {kw:['shortcut','hotkey','keyboard'],url:'nyx://help#keys',title:'Keyboard Shortcuts',desc:'Ctrl+T new tab · Ctrl+W close · Ctrl+L focus address bar · Ctrl+R reload · Esc close panels'},
+    {kw:['nyx','browser'],url:'nyx://about',title:'About Nyx Browser',desc:'Nyx is a private, local HTML browser. Sites are loaded from domens/ folder.'},
+    {kw:['history'],url:'nyx://history',title:'Browsing History',desc:'Your visit history is stored locally.'},
+    {kw:['bookmark','bookmarks'],url:'nyx://bookmarks',title:'Bookmarks',desc:'Save and manage your bookmarked sites.'},
+    {kw:['settings','theme','color'],url:'nyx://settings',title:'Browser Settings',desc:'Customize theme, accent color, and bookmarks bar.'},
+    {kw:['search','engine'],url:'nyx://search',title:'Nyx Search',desc:'Built-in private search engine.'},
+    {kw:['whatsnew','update','new','what\'s new','changelog'],url:'nyx://whats-new',title:"What's New",desc:'See the latest updates and features added to Nyx Browser.'},
+    {kw:['tab','tabs'],url:'nyx://help#tabs',title:'Tab Management',desc:'Ctrl+T new tab, Ctrl+W close, Ctrl+Tab switch.'},
+    {kw:['shortcut','hotkey'],url:'nyx://help#keys',title:'Keyboard Shortcuts',desc:'Ctrl+T · Ctrl+W · Ctrl+L · Ctrl+R · Ctrl+Tab · Esc'},
   ];
-
   infoBase.forEach(item=>{
     if(item.kw.some(k=>q.includes(k)||k.includes(q))){
       allResults.push({url:item.url,title:item.title,desc:item.desc});
     }
   });
-
   w.innerHTML=`
     <div class="sp-head">
       <div class="sp-brand">N<span>yx</span></div>
@@ -361,22 +500,94 @@ function buildSearchPage(id, query){
           <div class="sp-result-title">${r.title}</div>
           <div class="sp-result-desc">${r.desc}</div>
         </div>`).join('') :
-        `<div class="sp-empty">No results for "<strong>${query}</strong>"<br><span style="font-size:12px;margin-top:6px;display:block">Try a domain name like <code style="font-family:var(--mono);background:var(--s2);padding:2px 6px;border-radius:4px">q.com</code></span></div>`
+        `<div class="sp-empty">No results for "<strong>${query}</strong>"<br><span style="font-size:12px;margin-top:6px;display:block">Try a site like <code style="font-family:var(--mono);background:var(--s2);padding:2px 6px;border-radius:4px">site://q.com</code> or just <code>q.com</code></span></div>`
       }
     </div>
   `;
-
   w.querySelectorAll('.sp-result').forEach(el=>{
     el.addEventListener('click',()=>{
       const u=el.dataset.url;
-      if(u.startsWith('nyx://')){ handleNyxUrl(u); } else { closePanel(); navigateTo(u); }
+      if(u.startsWith('nyx://')){ handleNyxUrl(u); }
+      else { closePanel(); navigateTo(u); }
     });
   });
-
   w.querySelector('#sp-input').addEventListener('keydown',e=>{
     if(e.key==='Enter'){ const v=e.target.value.trim(); if(v) buildSearchPage(id,v); }
   });
+  vp.appendChild(w);
+  updateNavBtns(id);
+}
 
+function buildWhatsNewPage(id){
+  clearVP();
+  const w=document.createElement('div');
+  w.style.cssText='width:100%;height:100%;overflow-y:auto;background:var(--bg);padding:2rem;font-family:var(--font);color:var(--text)';
+  w.innerHTML=`
+    <div style="max-width:800px;margin:0 auto">
+      <div style="margin-bottom:2rem;border-bottom:1px solid var(--border);padding-bottom:1rem">
+        <h1 style="font-size:1.8rem;font-weight:500">What's New</h1>
+        <p style="color:var(--dim);font-size:0.85rem">Nyx Browser · December 2024</p>
+      </div>
+
+      <div style="background:var(--s1);border-radius:12px;margin-bottom:1rem;border:1px solid var(--border)">
+        <div style="padding:1rem;border-bottom:1px solid var(--border);background:rgba(108,142,255,.08)">
+          <span style="color:var(--acc);font-size:0.7rem;font-weight:600;letter-spacing:1px">VERSION 3.0</span>
+          <h2 style="margin-top:0.25rem;font-size:1.2rem">site:// Protocol</h2>
+        </div>
+        <div style="padding:1rem">
+          <p>Complete redesign of site loading. Each domain is now a folder with its own files.</p>
+          <pre style="background:var(--s2);padding:0.75rem;border-radius:8px;margin:0.75rem 0;overflow-x:auto;font-size:0.75rem">domens/q.com/index.html
+domens/q.com/about.html
+domens/q.com/contact.html</pre>
+          <p><code style="background:var(--s2);padding:0.2rem 0.4rem;border-radius:4px">site://q.com/about</code> works automatically.</p>
+        </div>
+      </div>
+
+      <div style="background:var(--s1);border-radius:12px;margin-bottom:1rem;border:1px solid var(--border)">
+        <div style="padding:1rem;border-bottom:1px solid var(--border);background:rgba(108,142,255,.05)">
+          <h2 style="font-size:1.1rem">Tab Improvements</h2>
+        </div>
+        <div style="padding:1rem">
+          <ul style="margin-left:1.5rem;color:var(--dim2);line-height:1.8">
+            <li>Drag and drop tabs to reorder</li>
+            <li>Ctrl+Tab to switch between tabs</li>
+            <li>Loading spinner in tabs</li>
+            <li>Scroll position saved when going back/forward</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="background:var(--s1);border-radius:12px;margin-bottom:1rem;border:1px solid var(--border)">
+        <div style="padding:1rem;border-bottom:1px solid var(--border);background:rgba(108,142,255,.05)">
+          <h2 style="font-size:1.1rem">Security & Privacy</h2>
+        </div>
+        <div style="padding:1rem">
+          <ul style="margin-left:1.5rem;color:var(--dim2);line-height:1.8">
+            <li>Internet connection check before loading</li>
+            <li>YYSEC Firewall integration (blocklist support)</li>
+            <li>Audit log for all navigation events</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="background:var(--s1);border-radius:12px;margin-bottom:1rem;border:1px solid var(--border)">
+        <div style="padding:1rem;border-bottom:1px solid var(--border);background:rgba(108,142,255,.05)">
+          <h2 style="font-size:1.1rem">Fixed</h2>
+        </div>
+        <div style="padding:1rem">
+          <ul style="margin-left:1.5rem;color:var(--dim2);line-height:1.8">
+            <li>Subpage navigation — <code>site://q.com/about</code> now works correctly</li>
+            <li>Relative links inside iframes are properly intercepted</li>
+            <li>Hash navigation preserved when reloading</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem;padding:1rem;background:var(--s2);border-radius:12px;text-align:center">
+        <span style="color:var(--dim);font-size:0.75rem">Nyx Browser · Local HTML browser · site:// protocol</span>
+      </div>
+    </div>
+  `;
   vp.appendChild(w);
   updateNavBtns(id);
 }
@@ -385,9 +596,18 @@ function handleNyxUrl(url){
   if(url==='nyx://history') openPanel('history');
   else if(url==='nyx://bookmarks') openPanel('bookmarks');
   else if(url==='nyx://settings') openPanel('settings');
+  else if(url==='nyx://whats-new'){ 
+    const t=tabs[activeId];
+    if(t && t.address!==url){
+      t.address=url;
+      t.title='Whats New';
+      t._el=null;
+      refreshTabEl(activeId);
+      buildWhatsNewPage(activeId);
+    }
+  }
 }
 
-/* ── NEW TAB PAGE ── */
 function buildNTP(id){
   clearVP(); omnibox.value='';
   const w=document.createElement('div'); w.className='nt-page';
@@ -399,14 +619,13 @@ function buildNTP(id){
     <div class="nt-search-wrap">
       <div class="nt-search">
         <span class="nt-si">${IC.search}</span>
-        <input id="nt-input" type="text" placeholder="Search Nyx or enter a domain...">
+        <input id="nt-input" type="text" placeholder="site://domain or search...">
         <span class="nt-search-lbl">NYX</span>
       </div>
     </div>
     <div class="nt-recents" id="nt-recents"></div>
   `;
   vp.appendChild(w);
-
   const tick=()=>{
     const n=new Date();
     const cl=document.getElementById('nt-clock');
@@ -415,9 +634,8 @@ function buildNTP(id){
     if(dt) dt.textContent=fmtDate(n);
   };
   tick(); tabs[id]._iv=setInterval(tick,1000);
-
   document.getElementById('nt-input').addEventListener('keydown',e=>{
-    if(e.key==='Enter'){ const v=e.target.value.trim(); if(v) navigateTo(v); }
+    if(e.key==='Enter'){ let v=e.target.value.trim(); if(v) navigateTo(v); }
   });
   renderRecents();
   updateNavBtns(id);
@@ -428,25 +646,11 @@ function renderRecents(){
   el.innerHTML='';
   HISTORY.slice(0,5).forEach(h=>{
     const d=document.createElement('div'); d.className='nt-rc';
-    d.innerHTML=`<span class="nt-rc-ico">${IC.globe}</span><span class="nt-rc-lbl">${h.host}</span>`;
+    const displayHost=h.host.replace('site://','');
+    d.innerHTML=`<span class="nt-rc-ico">${IC.globe}</span><span class="nt-rc-lbl">${displayHost}</span>`;
     d.addEventListener('click',()=>navigateTo(h.host));
     el.appendChild(d);
   });
-}
-
-/* ── SITE LOADER ── */
-function buildErrorPage(id,address){
-  clearVP();
-  const d=document.createElement('div'); d.className='err-page';
-  d.innerHTML=`
-    <div class="err-num">404</div>
-    <h2>Site not found</h2>
-    <p>Could not load <code>${address}</code><br>Make sure <code>${DPATH}${toFile(normHost(address))}</code> exists.</p>
-    <button class="err-retry">Try again</button>
-  `;
-  d.querySelector('.err-retry').addEventListener('click',()=>navigateTo(address));
-  vp.appendChild(d);
-  updateNavBtns(id);
 }
 
 function getVirtualSites(){ return JSON.parse(localStorage.getItem('nyx_vsites')||'{}'); }
@@ -460,7 +664,6 @@ function addAuditLog(host,action,blocked){
   log.unshift({host,action,blocked,time:Date.now()});
   localStorage.setItem('nyx_auditlog',JSON.stringify(log.slice(0,500)));
 }
-
 function isBlocked(host){
   const bl=getBlocklist();
   return bl.some(rule=>{
@@ -468,7 +671,6 @@ function isBlocked(host){
     return host===rule||host.endsWith('.'+rule);
   });
 }
-
 function buildBlockedPage(id,host){
   clearVP();
   const d=document.createElement('div');
@@ -516,63 +718,59 @@ window.addEventListener('message',e=>{
   }
 });
 
-async function loadSite(id,address){
-  if(!address||address.startsWith('nyx://')) return;
-  if(tabs[id]?._iv){ clearInterval(tabs[id]._iv); tabs[id]._iv=null; }
-  const host=normHost(address);
-
-  addAuditLog(host,'navigate',isBlocked(host));
-  if(isBlocked(host)){ endLoad(); buildBlockedPage(id,host); return; }
-
-  clearVP(); startLoad();
-  let html=null;
-  const vdb=getVirtualSites();
-  if(vdb[host]){ html=vdb[host].html; endLoad(); }
-  if(!html){
-    try{ const res=await fetch(DPATH+toFile(host)); if(!res.ok) throw 0; html=await res.text(); }
-    catch{ endLoad(); buildErrorPage(id,address); return; }
-  }
-  const f=document.createElement('iframe');
-  f.setAttribute('sandbox','allow-scripts allow-same-origin allow-popups allow-forms');
-  f.srcdoc=html;
-  if(!vdb[host]) f.addEventListener('load',endLoad,{once:true});
-  tabs[id]._el=f;
-  clearVP(); vp.appendChild(f);
-  omnibox.value=host;
-  HISTORY.unshift({host,time:Date.now()});
-  HISTORY=HISTORY.filter((v,i,a)=>a.findIndex(x=>x.host===v.host)===i);
-  saveHist();
-  updateNavBtns(id);
-}
-
-/* ── TAB ENGINE ── */
 function refreshTabEl(id){
   const t=tabs[id]; const el=tabsBar.querySelector(`[data-id="${id}"]`); if(!el) return;
-  el.querySelector('.tab-title').textContent=t.title||t.address||'New Tab';
+  let title=t.title||t.address||'New Tab';
+  if(title.startsWith('site://')) title=title.slice(7);
+  if(title.startsWith('nyx://')) title=title.slice(6);
+  if(title==='whats-new') title='Whats New';
+  el.querySelector('.tab-title').textContent=title;
 }
 
 function activateTab(id){
   if(activeId===id) return;
   if(activeId&&tabs[activeId]?._iv){ clearInterval(tabs[activeId]._iv); tabs[activeId]._iv=null; }
+  if(activeId) saveScrollPosition(activeId);
   tabsBar.querySelector(`[data-id="${activeId}"]`)?.classList.remove('active');
   activeId=id;
   tabsBar.querySelector(`[data-id="${id}"]`)?.classList.add('active');
   const t=tabs[id];
   if(!t.address){ buildNTP(id); return; }
   if(t.address.startsWith('nyx://search?')){ const q=new URLSearchParams(t.address.split('?')[1]).get('q'); buildSearchPage(id,q); return; }
-  if(t._el){ clearVP(); vp.appendChild(t._el); omnibox.value=t.address; updateNavBtns(id); }
+  if(t.address==='nyx://whats-new'){ buildWhatsNewPage(id); return; }
+  if(t._el){ clearVP(); vp.appendChild(t._el); omnibox.value=t.address; updateNavBtns(id); restoreScrollPosition(id); }
   else loadSite(id,t.address);
 }
 
 function createTab(address){
   const id=uid();
-  tabs[id]={id,address:address||null,history:address?[address]:[],hIdx:0,title:'New Tab',_el:null,_iv:null};
+  tabs[id]={id,address:address||null,history:address?[address]:[],hIdx:0,title:'New Tab',_el:null,_iv:null,scrollPos:0,incognito:false};
   const el=document.createElement('div'); el.className='tab'; el.dataset.id=id;
   el.innerHTML=`<span class="tab-ico">${IC.globe}</span><span class="tab-title">New Tab</span><button class="tab-x">${IC.x}</button>`;
   el.addEventListener('click',e=>{ if(!e.target.closest('.tab-x')) activateTab(id); });
   el.querySelector('.tab-x').addEventListener('click',e=>{ e.stopPropagation(); closeTab(id); });
   el.addEventListener('contextmenu',e=>{ e.preventDefault(); showTabCtx(e,id); });
+  el.draggable=true;
+  el.addEventListener('dragstart',e=>{ e.dataTransfer.setData('text/plain',id); e.dataTransfer.effectAllowed='move'; });
+  el.addEventListener('dragover',e=>{ e.preventDefault(); e.dataTransfer.dropEffect='move'; });
+  el.addEventListener('drop',e=>{
+    e.preventDefault();
+    const fromId=e.dataTransfer.getData('text/plain');
+    const toId=id;
+    if(fromId && fromId!==toId && tabs[fromId] && tabs[toId]){
+      const fromIndex=tabOrder.indexOf(fromId);
+      const toIndex=tabOrder.indexOf(toId);
+      if(fromIndex!==-1 && toIndex!==-1){
+        tabOrder.splice(fromIndex,1);
+        tabOrder.splice(toIndex,0,fromId);
+        const fromEl=tabsBar.querySelector(`[data-id="${fromId}"]`);
+        const toEl=tabsBar.querySelector(`[data-id="${toId}"]`);
+        if(fromEl && toEl) tabsBar.insertBefore(fromEl, toEl.nextSibling===newTabBtn ? toEl : toEl.nextSibling);
+      }
+    }
+  });
   tabsBar.insertBefore(el,newTabBtn);
+  tabOrder.push(id);
   activateTab(id);
   if(address) navigateTo(address,id);
   return id;
@@ -584,11 +782,12 @@ function closeTab(id){
   const el=tabsBar.querySelector(`[data-id="${id}"]`);
   if(el){ el.style.transition='transform .18s,opacity .18s'; el.style.transform='scaleX(0)'; el.style.opacity='0'; setTimeout(()=>el.remove(),180); }
   if(tabs[id]?._el) tabs[id]._el.remove();
+  const idx=tabOrder.indexOf(id);
+  if(idx!==-1) tabOrder.splice(idx,1);
   delete tabs[id];
   if(activeId===id){
     activeId=null;
-    const rem=[...tabsBar.querySelectorAll('.tab[data-id]')];
-    if(rem.length) activateTab(rem[rem.length-1].dataset.id);
+    if(tabOrder.length) activateTab(tabOrder[tabOrder.length-1]);
   }
 }
 
@@ -596,20 +795,60 @@ async function navigateTo(address,forceId){
   const id=forceId||activeId; if(!id) return;
   const t=tabs[id];
   if(t._iv){ clearInterval(t._iv); t._iv=null; }
-
-  let host=normHost(address);
-  const isSearch = !host.includes('.')||host.includes(' ')||host.startsWith('nyx://');
-
-  if(isSearch && !address.startsWith('nyx://')){
-    const searchAddr='nyx://search?q='+encodeURIComponent(address);
-    t.address=searchAddr; t.title='Nyx Search — '+address; t._el=null;
-    if(t.history[t.hIdx]!==searchAddr){ t.history=t.history.slice(0,t.hIdx+1); t.history.push(searchAddr); t.hIdx=t.history.length-1; }
-    refreshTabEl(id); buildSearchPage(id,address); return;
+  
+  let target=address.trim();
+  if(!target){ createTab(); return; }
+  
+  if(target.startsWith('nyx://')){
+    t.address=target;
+    t.title=target.replace('nyx://','');
+    t._el=null;
+    refreshTabEl(id);
+    if(target==='nyx://history') openPanel('history');
+    else if(target==='nyx://bookmarks') openPanel('bookmarks');
+    else if(target==='nyx://settings') openPanel('settings');
+    else if(target==='nyx://whats-new') buildWhatsNewPage(id);
+    else if(target.startsWith('nyx://search?')){
+      const q=new URLSearchParams(target.split('?')[1]).get('q');
+      buildSearchPage(id,q);
+    } else buildNTP(id);
+    return;
   }
-
-  t.address=host; t.title=host; t._el=null;
-  if(t.history[t.hIdx]!==host){ t.history=t.history.slice(0,t.hIdx+1); t.history.push(host); t.hIdx=t.history.length-1; }
-  refreshTabEl(id); await loadSite(id,host);
+  
+  if(!target.includes('://') && !target.includes(' ') && target!=='' && target.includes('.')){
+    target='site://'+target;
+  }
+  
+  const isSearch=target.includes(' ') || (!target.includes('.') && !target.startsWith('site://'));
+  
+  if(isSearch && !target.startsWith('site://')){
+    const searchAddr='nyx://search?q='+encodeURIComponent(target);
+    t.address=searchAddr;
+    t.title='Search: '+target;
+    t._el=null;
+    if(t.history[t.hIdx]!==searchAddr){
+      t.history=t.history.slice(0,t.hIdx+1);
+      t.history.push(searchAddr);
+      t.hIdx=t.history.length-1;
+    }
+    refreshTabEl(id);
+    buildSearchPage(id,target);
+    return;
+  }
+  
+  saveScrollPosition(id);
+  t.address=target;
+  let displayTitle=target;
+  if(displayTitle.startsWith('site://')) displayTitle=displayTitle.slice(7);
+  t.title=displayTitle;
+  t._el=null;
+  if(t.history[t.hIdx]!==target){
+    t.history=t.history.slice(0,t.hIdx+1);
+    t.history.push(target);
+    t.hIdx=t.history.length-1;
+  }
+  refreshTabEl(id);
+  await loadSite(id,target);
 }
 
 function updateNavBtns(id){
@@ -618,14 +857,15 @@ function updateNavBtns(id){
   btnFwd.disabled=t.hIdx>=t.history.length-1;
 }
 
-/* ── BOOKMARKS BAR ── */
 function renderBmarksBar(){
   bmarksBar.innerHTML='';
   if(!CFG.bmarks_bar||!BOOKMARKS.length){ bmarksBar.classList.add('hidden'); return; }
   bmarksBar.classList.remove('hidden');
   BOOKMARKS.forEach(b=>{
     const btn=document.createElement('button'); btn.className='bm-item';
-    btn.innerHTML=`${IC.bm} ${b.host}`;
+    let display=b.host;
+    if(display.startsWith('site://')) display=display.slice(7);
+    btn.innerHTML=`${IC.bm} ${display}`;
     btn.addEventListener('click',()=>navigateTo(b.host));
     bmarksBar.appendChild(btn);
   });
@@ -643,7 +883,6 @@ function toggleBookmark(){
   document.getElementById('btn-bm').classList.toggle('lit',lit);
 }
 
-/* ── PANELS ── */
 let currentPanel=null;
 function openPanel(type){
   if(currentPanel===type){ closePanel(); return; }
@@ -662,17 +901,19 @@ function renderHistPanel(){
   panelBody.innerHTML='';
   HISTORY.forEach((h,i)=>{
     const el=document.createElement('div'); el.className='list-item'; el.style.animationDelay=(i*15)+'ms';
+    let display=h.host;
+    if(display.startsWith('site://')) display=display.slice(7);
     el.innerHTML=`<span class="list-item-ico">${IC.globe}</span>
-      <div class="list-item-body"><div class="list-item-title">${h.host}</div><div class="list-item-sub">${new Date(h.time).toLocaleString('en')}</div></div>
+      <div class="list-item-body"><div class="list-item-title">${display}</div><div class="list-item-sub">${new Date(h.time).toLocaleString('en')}</div></div>
       <button class="list-item-del">${IC.x}</button>`;
     el.addEventListener('click',e=>{ if(!e.target.closest('.list-item-del')){ closePanel(); navigateTo(h.host); }});
-    el.querySelector('.list-item-del').addEventListener('click',e=>{ e.stopPropagation(); HISTORY.splice(i,1); saveHist(); renderHistPanel(); });
+    el.querySelector('.list-item-del').addEventListener('click',e=>{ e.stopPropagation(); HISTORY.splice(i,1); saveHist(); renderHistPanel(); renderRecents(); });
     panelBody.appendChild(el);
   });
   const clr=document.createElement('button');
   clr.style.cssText='width:100%;margin-top:8px;padding:10px;border:none;border-radius:8px;cursor:pointer;background:rgba(248,113,113,.1);color:var(--red);font-family:var(--font);font-size:13px;font-weight:500;transition:background .15s';
   clr.textContent='Clear all history';
-  clr.addEventListener('click',()=>{ HISTORY=[]; saveHist(); renderHistPanel(); showToast('History cleared'); });
+  clr.addEventListener('click',()=>{ HISTORY=[]; saveHist(); renderHistPanel(); renderRecents(); showToast('History cleared'); });
   panelBody.appendChild(clr);
 }
 
@@ -681,8 +922,10 @@ function renderBMPanel(){
   panelBody.innerHTML='';
   BOOKMARKS.forEach((b,i)=>{
     const el=document.createElement('div'); el.className='list-item'; el.style.animationDelay=(i*15)+'ms';
+    let display=b.host;
+    if(display.startsWith('site://')) display=display.slice(7);
     el.innerHTML=`<span class="list-item-ico">${IC.bm}</span>
-      <div class="list-item-body"><div class="list-item-title">${b.host}</div></div>
+      <div class="list-item-body"><div class="list-item-title">${display}</div></div>
       <button class="list-item-del">${IC.x}</button>`;
     el.addEventListener('click',e=>{ if(!e.target.closest('.list-item-del')){ closePanel(); navigateTo(b.host); }});
     el.querySelector('.list-item-del').addEventListener('click',e=>{ e.stopPropagation(); BOOKMARKS.splice(i,1); saveBM(); renderBmarksBar(); renderBMPanel(); showToast('Removed'); });
@@ -702,11 +945,11 @@ function renderSettings(){
       { title:'Bookmarks bar', desc:'Show saved bookmarks below toolbar', type:'toggle', on:()=>CFG.bmarks_bar, toggle:()=>{ CFG.bmarks_bar=!CFG.bmarks_bar; saveCFG(); renderBmarksBar(); }},
     ]},
     { label:'Data', rows:[
-      { title:'History', desc:HISTORY.length+' items stored', type:'action', text:'Clear', action:()=>{ HISTORY=[]; saveHist(); showToast('History cleared'); renderSettings(); }},
+      { title:'History', desc:HISTORY.length+' items stored', type:'action', text:'Clear', action:()=>{ HISTORY=[]; saveHist(); renderRecents(); showToast('History cleared'); renderSettings(); }},
       { title:'Bookmarks', desc:BOOKMARKS.length+' bookmarks', type:'action', text:'Clear', action:()=>{ BOOKMARKS=[]; saveBM(); renderBmarksBar(); showToast('Bookmarks cleared'); renderSettings(); }},
     ]},
     { label:'About', rows:[
-      { title:'Nyx Browser', desc:'Local HTML browser emulator · v2.1', type:'info' },
+      { title:'Nyx Browser', desc:'Local HTML browser · site:// protocol · v3.0', type:'info' },
       { title:'Search engine', desc:'Nyx Search — private, local, zero tracking', type:'info' },
     ]},
   ];
@@ -728,7 +971,6 @@ function renderSettings(){
   });
 }
 
-/* ── CONTEXT MENU ── */
 let ctxEl=null;
 function removeCtx(){ if(ctxEl){ ctxEl.remove(); ctxEl=null; } }
 document.addEventListener('click',removeCtx);
@@ -738,7 +980,7 @@ function showTabCtx(e,id){
   const m=document.createElement('div'); m.className='ctx-menu';
   m.style.left=e.clientX+'px'; m.style.top=e.clientY+'px';
   const items=[
-    {ico:`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>`,label:'Reload',fn:()=>{ if(tabs[id]?.address){ tabs[id]._el=null; loadSite(id,tabs[id].address); }}},
+    {ico:`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>`,label:'Reload',fn:()=>{ if(tabs[id]?.address){ tabs[id]._el=null; if(tabs[id].address==='nyx://whats-new') buildWhatsNewPage(id); else loadSite(id,tabs[id].address); }}},
     {ico:`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`,label:'Duplicate',fn:()=>createTab(tabs[id]?.address)},
     null,
     {ico:IC.x,label:'Close tab',fn:()=>closeTab(id),cls:'danger'},
@@ -757,9 +999,8 @@ function showTabCtx(e,id){
   if(rect.bottom>window.innerHeight) m.style.top=(e.clientY-rect.height)+'px';
 }
 
-/* ── EVENT BINDINGS ── */
-btnBack.addEventListener('click',async()=>{ const t=tabs[activeId]; if(!t||t.hIdx<=0) return; t.hIdx--; t.address=t.history[t.hIdx]; t._el=null; refreshTabEl(activeId); if(t.address.startsWith('nyx://search?')){ const q=new URLSearchParams(t.address.split('?')[1]).get('q'); buildSearchPage(activeId,q); } else await loadSite(activeId,t.address); });
-btnFwd.addEventListener('click',async()=>{ const t=tabs[activeId]; if(!t||t.hIdx>=t.history.length-1) return; t.hIdx++; t.address=t.history[t.hIdx]; t._el=null; refreshTabEl(activeId); if(t.address.startsWith('nyx://search?')){ const q=new URLSearchParams(t.address.split('?')[1]).get('q'); buildSearchPage(activeId,q); } else await loadSite(activeId,t.address); });
+btnBack.addEventListener('click',async()=>{ const t=tabs[activeId]; if(!t||t.hIdx<=0) return; saveScrollPosition(activeId); t.hIdx--; t.address=t.history[t.hIdx]; t._el=null; refreshTabEl(activeId); if(t.address.startsWith('nyx://search?')){ const q=new URLSearchParams(t.address.split('?')[1]).get('q'); buildSearchPage(activeId,q); } else if(t.address==='nyx://whats-new') buildWhatsNewPage(activeId); else await loadSite(activeId,t.address); });
+btnFwd.addEventListener('click',async()=>{ const t=tabs[activeId]; if(!t||t.hIdx>=t.history.length-1) return; saveScrollPosition(activeId); t.hIdx++; t.address=t.history[t.hIdx]; t._el=null; refreshTabEl(activeId); if(t.address.startsWith('nyx://search?')){ const q=new URLSearchParams(t.address.split('?')[1]).get('q'); buildSearchPage(activeId,q); } else if(t.address==='nyx://whats-new') buildWhatsNewPage(activeId); else await loadSite(activeId,t.address); });
 btnRld.addEventListener('click',async()=>{
   const t=tabs[activeId]; if(!t) return;
   t._el=null;
@@ -768,13 +1009,14 @@ btnRld.addEventListener('click',async()=>{
     const q=new URLSearchParams(t.address.split('?')[1]).get('q');
     buildSearchPage(activeId,q); return;
   }
+  if(t.address==='nyx://whats-new'){ buildWhatsNewPage(activeId); return; }
   if(t.address.startsWith('nyx://')){ return; }
   await loadSite(activeId,t.address);
 });
 newTabBtn.addEventListener('click',()=>createTab());
-omnibox.addEventListener('keydown',e=>{ if(e.key==='Enter'){ const v=omnibox.value.trim(); if(v){ navigateTo(v); omnibox.blur(); }}});
+omnibox.addEventListener('keydown',e=>{ if(e.key==='Enter'){ let v=omnibox.value.trim(); if(v){ navigateTo(v); omnibox.blur(); }}});
 omnibox.addEventListener('focus',()=>omnibox.select());
-document.getElementById('omnibox-go').addEventListener('click',()=>{ const v=omnibox.value.trim(); if(v) navigateTo(v); });
+document.getElementById('omnibox-go').addEventListener('click',()=>{ let v=omnibox.value.trim(); if(v) navigateTo(v); });
 document.getElementById('btn-bm').addEventListener('click',toggleBookmark);
 document.getElementById('btn-hist').addEventListener('click',()=>openPanel('history'));
 document.getElementById('btn-bms').addEventListener('click',()=>openPanel('bookmarks'));
@@ -785,10 +1027,22 @@ document.addEventListener('keydown',e=>{
   if((e.ctrlKey||e.metaKey)&&e.key==='w'){ e.preventDefault(); if(activeId) closeTab(activeId); }
   if((e.ctrlKey||e.metaKey)&&e.key==='l'){ e.preventDefault(); omnibox.focus(); }
   if((e.ctrlKey||e.metaKey)&&e.key==='r'){ e.preventDefault(); btnRld.click(); }
+  if((e.ctrlKey||e.metaKey)&&e.key==='Tab'){
+    e.preventDefault();
+    if(tabOrder.length>1){
+      ctrlTabIndex=(ctrlTabIndex+1)%tabOrder.length;
+      activateTab(tabOrder[ctrlTabIndex]);
+    }
+  }
   if(e.key==='Escape') closePanel();
 });
 
 createTab();
+
+setTimeout(()=>{
+  console.log('Nyx Browser v3.0 ready | site://protocol | nyx://whats-new available');
+  console.log('Try: nyx://whats-new to see updates');
+},100);
 </script>
 </body>
 </html>

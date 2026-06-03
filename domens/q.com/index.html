@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q.com - Nyx Browser Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            color: #fff;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        nav {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        nav a {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        nav a:hover, nav a.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: translateY(-2px);
+        }
+        .page {
+            display: none;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            animation: fadeIn 0.3s ease;
+        }
+        .page.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .info-card {
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 0.25rem;
+            transition: transform 0.1s;
+        }
+        button:hover {
+            transform: scale(1.02);
+        }
+        .counter {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 1rem 0;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.6rem;
+            margin: 0.5rem 0;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            color: white;
+            font-family: monospace;
+        }
+        .log {
+            background: #0a0a0a;
+            border-radius: 8px;
+            padding: 0.5rem;
+            font-family: monospace;
+            font-size: 0.75rem;
+            height: 120px;
+            overflow-y: auto;
+        }
+        .log p {
+            margin: 0.2rem 0;
+            color: #0f0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+        }
+        @media (max-width: 600px) {
+            .container { padding: 1rem; }
+            h1 { font-size: 2rem; }
+            nav a { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 Q.com</h1>
+            <div class="badge">Demo Site · Nyx Browser</div>
+        </header>
+
+        <nav>
+            <a onclick="showPage('home', true)">🏠 Home</a>
+            <a onclick="showPage('features', true)">✨ Features</a>
+            <a onclick="showPage('sandbox', true)">🧪 Sandbox</a>
+            <a onclick="showPage('about', true)">📖 About</a>
+        </nav>
+
+        <div id="home" class="page active">
+            <h2>Welcome to Q.com</h2>
+            <p>Q.com is a demonstration website for <strong>Nyx Browser</strong> — a local HTML browser that loads sites from the <code>domens/</code> folder using the <code>site://</code> protocol.</p>
+            
+            <div class="info-card">
+                <strong>🔍 Browser Info:</strong><br>
+                📍 Current URL: <span id="current-url">site://q.com</span><br>
+                📱 User Agent: <span id="user-agent"></span><br>
+                🖥️ Viewport: <span id="viewport-size"></span>
+            </div>
+
+            <div class="info-card">
+                <strong>🧭 Navigation Tips:</strong><br>
+                • Use the menu above — URL changes with #hash<br>
+                • Try typing: <code>site://q.com#features</code><br>
+                • Back/Forward buttons work with hash navigation
+            </div>
+        </div>
+
+        <div id="features" class="page">
+            <h2>✨ Features Demo</h2>
+            <div class="info-card">
+                <strong>🎨 CSS Animations</strong>
+                <div id="animBox" style="width: 100px; height: 100px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 12px; margin: 1rem 0; transition: all 0.3s; cursor: pointer;"></div>
+                <button onclick="document.getElementById('animBox').style.transform = 'rotate(' + Math.random()*360 + 'deg)'">Rotate</button>
+                <button onclick="document.getElementById('animBox').style.transform = 'scale(' + (0.5 + Math.random()) + ')'">Scale</button>
+                <button onclick="document.getElementById('animBox').style.transform = 'none'">Reset</button>
+            </div>
+
+            <div class="info-card">
+                <strong>🔢 Counter</strong>
+                <div class="counter" id="counter">0</div>
+                <button onclick="counter++; document.getElementById('counter').innerText=counter">+1</button>
+                <button onclick="counter--; document.getElementById('counter').innerText=counter">-1</button>
+                <button onclick="counter=0; document.getElementById('counter').innerText=counter">Reset</button>
+            </div>
+
+            <div class="info-card">
+                <strong>💾 Local Storage Test</strong>
+                <button onclick="localStorage.setItem('qcom_test', 'Hello ' + Date.now()); alert('Saved!')">Save to localStorage</button>
+                <button onclick="alert(localStorage.getItem('qcom_test') || 'Nothing saved')">Read localStorage</button>
+                <button onclick="localStorage.removeItem('qcom_test'); alert('Cleared')">Clear</button>
+            </div>
+        </div>
+
+        <div id="sandbox" class="page">
+            <h2>🧪 JavaScript Sandbox</h2>
+            <div class="info-card">
+                <strong>Run JavaScript code:</strong>
+                <textarea id="jsCode" rows="3" placeholder="console.log('Hello'); alert('test');">alert('Hello from Q.com!');</textarea>
+                <button onclick="eval(document.getElementById('jsCode').value)">Run ▶</button>
+                <button onclick="document.getElementById('jsCode').value=''">Clear</button>
+            </div>
+
+            <div class="info-card">
+                <strong>📨 PostMessage to Browser</strong>
+                <p>Send messages to Nyx Browser (if it listens)</p>
+                <input type="text" id="pmMessage" placeholder="Message text" value="Hello from Q.com!">
+                <button onclick="window.parent.postMessage({source:'qcom', type:'demo', text:document.getElementById('pmMessage').value}, '*'); alert('Sent!')">Send</button>
+            </div>
+
+            <div class="info-card">
+                <strong>📋 Console Log</strong>
+                <div class="log" id="logConsole"></div>
+                <button onclick="addLog('Test log at ' + new Date().toLocaleTimeString())">Add log</button>
+                <button onclick="document.getElementById('logConsole').innerHTML=''">Clear log</button>
+            </div>
+        </div>
+
+        <div id="about" class="page">
+            <h2>📖 About Q.com</h2>
+            <div class="info-card">
+                <strong>What is Q.com?</strong>
+                <p>Q.com is a demo domain for Nyx Browser. It showcases how local HTML sites work with the <code>site://</code> protocol and hash-based navigation.</p>
+            </div>
+            <div class="info-card">
+                <strong>📂 Folder Structure:</strong>
+                <pre style="background: #000; padding: 0.5rem; border-radius: 8px; overflow-x: auto;">
+domens/
+└── q.com/
+    └── index.html    (this file)
+                </pre>
+                <p>To add pages, create separate .html files or use hash navigation.</p>
+            </div>
+            <div class="info-card">
+                <strong>🔗 Links:</strong><br>
+                • <a href="site://builder.nyx">Builder.nyx</a> — Site builder tool<br>
+                • <a href="site://registry.nyx">Registry.nyx</a> — Site registry<br>
+                • <a href="site://yysec.net">YYSEC.net</a> — Security panel<br>
+                • <a href="site://flow.app">Flow.app</a> — Workflow app<br>
+                • <a href="site://localhost">Localhost</a> — Dev server
+            </div>
+        </div>
+
+        <footer>
+            Q.com · Demo for Nyx Browser · <code>site://</code> protocol · Hash navigation supported
+        </footer>
+    </div>
+
+    <script>
+        let counter = 0;
+
+        function addLog(msg) {
+            const logDiv = document.getElementById('logConsole');
+            const p = document.createElement('p');
+            p.textContent = '> ' + msg;
+            logDiv.appendChild(p);
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+
+        function showPage(pageId, updateHash = true) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            
+            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+            event?.target?.classList?.add('active');
+            
+            if (updateHash) {
+                window.location.hash = pageId;
+            }
+        }
+
+        function loadFromHash() {
+            const hash = window.location.hash.slice(1);
+            const validPages = ['home', 'features', 'sandbox', 'about'];
+            if (hash && validPages.includes(hash)) {
+                showPage(hash, false);
+                document.querySelectorAll('nav a').forEach((a, i) => {
+                    if (a.innerText.toLowerCase().includes(hash)) {
+                        a.classList.add('active');
+                    }
+                });
+            } else {
+                showPage('home', false);
+            }
+        }
+
+        window.addEventListener('hashchange', loadFromHash);
+        
+        document.getElementById('user-agent').textContent = navigator.userAgent;
+        function updateViewport() {
+            document.getElementById('viewport-size').textContent = window.innerWidth + 'x' + window.innerHeight;
+        }
+        updateViewport();
+        window.addEventListener('resize', updateViewport);
+        document.getElementById('current-url').textContent = window.location.href;
+
+        window.addEventListener('message', (e) => {
+            if (e.data) {
+                addLog('Received: ' + JSON.stringify(e.data));
+            }
+        });
+
+        loadFromHash();
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Converter</title>
+    <style>
+        :root {
+            --primary: #e60023;
+            --primary-pressed: #cc001f;
+            --canvas: #ffffff;
+            --surface-card: #f6f6f3;
+            --ink: #000000;
+            --body: #33332e;
+            --ash: #91918c;
+            --rounded-md: 16px;
+            --rounded-full: 9999px;
+        }
+
+        body {
+            background-color: var(--canvas);
+            color: var(--ink);
+            font-family: -apple-system, system-ui, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background-color: var(--surface-card);
+            padding: 32px;
+            border-radius: var(--rounded-md);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 22px;
+            margin-bottom: 24px;
+        }
+
+        input {
+            width: 100%;
+            padding: 11px 15px;
+            border: 1px solid var(--ash);
+            border-radius: var(--rounded-md);
+            font-size: 16px;
+            box-sizing: border-box;
+            margin-bottom: 16px;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            border-radius: var(--rounded-full);
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: var(--primary-pressed);
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Converter</h1>
+    <input type="number" id="inputVal" placeholder="Enter value">
+    <button onclick="convert()">Convert</button>
+    <div id="result"></div>
+</div>
+
+<script>
+    function convert() {
+        const val = document.getElementById('inputVal').value;
+        document.getElementById('result').innerText = "Result: " + (val * 1.609) + " units";
+    }
+</script>
+
+</body>
+</html>
